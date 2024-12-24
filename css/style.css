@@ -1,0 +1,178 @@
+/* إعدادات عامة */
+* {
+  box-sizing: border-box; /* تأكد من أن الحشو والحدود تؤخذ في الاعتبار في العرض */
+  margin: 0;
+  padding: 0;
+}
+/* تصميم الهيدر */
+header {
+  background-color: #2d3e50; /* لون داكن */
+  color: white;
+  padding: 10px 0; /* حشو أعلى وأسفل */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+/* تصميم شريط التنقل */
+nav {
+  display: flex;
+  justify-content: space-between; /* توزيع العناصر بشكل متساوي */
+  align-items: center;
+  width: 100%; /* تأكد من أن العرض 100% */
+  max-width: 1200px; /* تحديد الحد الأقصى للعرض */
+  margin: 0 auto; /* توسيط الشريط */
+  padding: 0 20px; /* إضافة حشو جانبي */
+}
+
+.logo-container {
+  display: flex; /* استخدام flexbox */
+  align-items: center; /* محاذاة العناصر عموديًا */
+}
+
+nav .logo {
+  width: 50px; /* حجم الشعار */
+  margin-right: 10px; /* مسافة بين الشعار والعنوان */
+}
+/* تصميم الشعار */
+.logo {
+  margin-right: 10px; /* مسافة بين الشعار والعنوان */
+}
+
+/* تخصيص الألوان إذا لزم الأمر */
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff; /* لون النص */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #4caf50; /* لون عند التمرير */
+}
+nav h1 {
+  font-size: 1.8em; /* حجم عنوان المتجر */
+  color: #4caf50; /* لون العنوان */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0; /* إزالة الهوامش */
+}
+
+nav ul li {
+  margin: 0 15px; /* مسافة بين العناصر */
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px; /* حشو حول النص */
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #4caf50; /* لون عند التمرير */
+  color: white; /* لون النص عند التمرير */
+}
+
+/* تأثير عند التمرير */
+nav ul li a:active {
+  transform: scale(0.95); /* تأثير تصغير الزر عند الضغط */
+}
+/* تصميم القسم
+/* تصميم القسم الرئيسي */
+.hero {
+  background-image: url("img/hero-bg.jpg"); /* صورة خلفية */
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #4caf50; /* لون الزر */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: #45a049; /* لون الزر عند التمرير */
+  transform: scale(1.05); /* تأثير تكبير الزر عند التمرير */
+}
+
+/* تصميم قسم المميزات */
+.features {
+  padding: 50px 20px;
+  background-color: #e9f5f2; /* خلفية فاتحة بلون مائي */
+  text-align: center;
+}
+
+.features h2 {
+  margin-bottom: 30px;
+  color: #2c3e50; /* لون النص */
+  font-size: 2.5em; /* حجم أكبر */
+  font-weight: bold; /* جعل النص عريض */
+}
+
+.feature-grid {
+  display: flex; /* استخدام flexbox */
+  flex-wrap: wrap; /* السماح للعناصر بالتفاف */
+  justify-content: center; /* توسيط العناصر أفقياً */
+  gap: 20px; /* مسافة بين العناصر */
+}
+
+.feature-item {
+  background-color: white; /* خلفية بيضاء */
+  border-radius: 10px; /* زوايا دائرية */
+  padding: 30px; /* زيادة الحشو */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+  transition: transform 0.3s, box-shadow 0.3s; /* تأثير التحريك */
+  width: 280px; /* تحديد عرض العنصر */
+  text-align: center; /* توسيط النص داخل العنصر */
+}
+
+.feature-item:hover {
+  transform: translateY(-5px); /* تأثير رفع العنصر عند التمرير */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* زيادة الظل عند التمرير */
+}
+
+.feature-icon {
+  width: 80px; /* حجم الأيقونة أكبر */
+  height: 80px; /* حجم الأيقونة أكبر */
+  margin-bottom: 15px; /* مسافة أسفل الأيقونة */
+}
+
+.feature-item h3 {
+  margin-top: 10px;
+  color: #27ae60; /* لون النص */
+  font-size: 1.8em; /* حجم أكبر */
+}
+
+.feature-item p {
+  color: #555; /* لون النص */
+  font-size: 1.1em; /* حجم النص */
+}
+/* تصميم الفوتر */
+footer {
+  text-align: center;
+  padding: 20px; /* حشو */
+  background-color: #2d3e50; /* لون داكن */
+  color: white; /* لون النص */
+  position: relative;
+  bottom: 0;
+  width: 100%; /* تأكد من أن العرض 100% */
+  margin-top: 20px; /* إضافة مسافة أعلى الفوتر */
+}

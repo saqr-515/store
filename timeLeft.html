@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALHJEEN-TEC Sign Up</title>
+    
+
+</head>
+<body style="background-color: rgb(139, 139, 139);">
+   <div style="text-align: center;position: relative;top: 200px;">
+        <h1 style="color: rgb(255, 255, 255);">انتظر قليلا</h1>
+        <h2 style="color: rgb(255, 255, 255);">....جاريا التحميل</h2>
+        <!-- عرض التوقيت هنا -->
+        <div id="timer" style="color: aliceblue;font-size: 50px;">3</div>
+    </div> 
+     
+    
+     <script>
+        // تحديد الوقت المبدئي للمؤقت (بالثواني)
+        let timeLeft = 3;
+    
+        // تحديد العنصر الذي سيعرض الوقت
+        const timerElement = document.getElementById("timer");
+    
+        // إنشاء المؤقت باستخدام setInterval
+        const interval = setInterval(function() {
+            timeLeft--;  // تقليل الوقت بمقدار ثانية
+            timerElement.textContent = timeLeft; // تحديث عرض الوقت في الصفحة
+    
+            // عندما ينتهي الوقت
+            
+
+            if (timeLeft <= 0) {
+                clearInterval(interval);  // إيقاف المؤقت
+                timerElement.textContent = "يمكنك البدأ في الشراء";
+                 window.location.href = "../pages/dvises/dvises.html"; // عرض رسالة عند الانتهاء
+            }
+        }, 1500); // المؤقت يعمل كل ثانية (1000 مللي ثانية)
+    </script> 
+    
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALHJEEN-TEC</title>
+    <link rel="stylesheet" href="../css/s-ask.css">
+    <link rel="stylesheet" href="../css/s-nav.css">
+    <link rel="stylesheet" href="../css/style.css">
+    
+</head>
+<body>
+    <nav class="nav-tec" style="background-color: rgb(20, 170, 135)">
+        
+           
+        <img src="../img/log.png" alt="علامة المتجر">
+        <div class="header">
+            <h1 class="head">ALHJEEN-TEC</h1>
+        </div>
+        <tr class="choees">
+            <td><a href="home.html">الصفحة الرئيسية</a></td>
+            <td><a href="dvises/type-dvises/phone/phone.html">الهواتف</a> </td>
+            <td><a href="dvises/type-dvises/lap/lab.html">اللاب</a></td>
+            <td><a href="calling.html">استفسار</a></td>
+            <td><a href="calling.html">للتواصل حاص</a></td>
+        </tr>
+        
+    </nav>
+    <header>
+        <h1>Smart Devices - Customer Inquiry</h1>
+        <p>Have questions about our smart devices? Fill out the form below and we'll get back to you soon!</p>
+    </header>
+
+    <section class="inquiry-form">
+        <h2>Contact Us</h2>
+        <form id="verifyForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="device">Device of Interest:</label>
+            <select id="device" name="device">
+                <option value="phone">Smartphone</option>
+                <option value="laptop">Laptop</option>
+                <option value="elsewhere">elsewhere</option>
+            </select>
+
+            <label for="message">Your Inquiry:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Submit Inquiry</button>
+            <p id="verifyMessage" style="color: red;"></p>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Alhjeen Technology Company. All rights reserved.</p>
+    </footer>
+      
+    
+    <script>
+        document.getElementById('verifyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const verifyEmail = document.getElementById('email').value;
+            
+
+            const userData = JSON.parse(localStorage.getItem('userData'));
+
+            if (userData && userData.email === verifyEmail ) {
+                window.location.href = '../pages/dvises/dvises.html';
+            } else {
+                document.getElementById('verifyMessage').textContent = 'البريد الإلكتروني  غير موجود يرجى تسجيل الدخول';
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALHJEEN-TEC Log in</title>
+    <link rel="stylesheet" href="../css/s-log.css">
+</head>
+<body>
+     <div class="form-container">
+        <h2>سجل الدخول</h2>
+        <form id="verifyForm">
+            <label for="verifyEmail">البريد الإلكتروني:</label>
+            <input type="email" id="verifyEmail" name="verifyEmail" required>
+
+            <label for="verifyPassword">كلمة المرور:</label>
+            <input type="password" id="verifyPassword" name="verifyPassword" required>
+
+            <button type="submit" id="save">تسجيل الدخول</button>
+            <br>
+            <br>
+            <br>
+            <a href="sign-up.html">تسجيل حساب جديد</a>
+            
+        </form>
+        <p id="verifyMessage" style="color: red;"></p>
+    </div>
+    
+
+    <script>
+        document.getElementById('verifyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const verifyEmail = document.getElementById('verifyEmail').value;
+            const verifyPassword = document.getElementById('verifyPassword').value;
+
+            const userData = JSON.parse(localStorage.getItem('userData'));
+
+            if (userData && userData.email === verifyEmail && userData.password === verifyPassword) {
+                window.location.href = 'timeLeft.html';
+            } else {
+                document.getElementById('verifyMessage').textContent = 'البريد الإلكتروني أو كلمة المرور غير صحيحة';
+            }
+        });
+    </script>
+</body>
+</html>

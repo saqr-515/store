@@ -320,3 +320,32 @@ button:hover {
 #errorMessage {
   color: red; /* لون الرسالة الحمراء */
 }
+
+
+.loading-overlay {
+    position: fixed; /* يجعل العنصر ثابتًا في الشاشة */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* خلفية بيضاء مع شفافية */
+    display: flex; /* استخدام flexbox لتوسيع المحتوى */
+    justify-content: center; /* توسيط المحتوى أفقيًا */
+    align-items: center; /* توسيط المحتوى عموديًا */
+    z-index: 9999; /* تأكد من أن العنصر فوق كل العناصر الأخرى */
+    visibility: hidden; /* إخفاء العنصر بشكل افتراضي */
+}
+
+.spinner {
+    border: 8px solid #f3f3f3; /* لون الخلفية */
+    border-top: 8px solid #3498db; /* لون الجزء المتحرك */
+    border-radius: 50%; /* شكل دائري */
+    width: 50px; /* عرض الدائرة */
+    height: 50px; /* ارتفاع الدائرة */
+    animation: spin 1s linear infinite; /* تأثير الدوران */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

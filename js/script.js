@@ -1,3 +1,24 @@
+// وظيفة لإظهار عنصر التحميل
+function showLoading() {
+    document.getElementById('loading').style.visibility = 'visible';
+}
+
+// وظيفة لإخفاء عنصر التحميل
+function hideLoading() {
+    document.getElementById('loading').style.visibility = 'hidden';
+}
+
+// مثال على استخدام الوظائف
+document.addEventListener('DOMContentLoaded', function() {
+    // إظهار عنصر التحميل عند تحميل الصفحة
+    showLoading();
+
+    // محاكاة تحميل البيانات (يمكنك استبدال هذا بكود التحميل الفعلي)
+    setTimeout(function() {
+        // إخفاء عنصر التحميل بعد 3 ثوانٍ
+        hideLoading();
+    }, 3000);
+});
 $(document).ready(function () {
   $("#containerSlider").slick({
     dots: true,
@@ -76,3 +97,4 @@ document
       location.reload();
     }
   });
+  

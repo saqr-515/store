@@ -1,62 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALHJEEN-TEC Contact Page</title>
-    <link rel="stylesheet" href="../css/s-call.css">
-    <link rel="stylesheet" href="../css/s-nav.css">
-    
+    <title>للتواصل - ALHJEEN-TEC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
+        type="image/gif" sizes="16x16">
 </head>
+
 <body>
-    <nav class="nav-tec">
-        
-           
-        <img src="../img/log.png" alt="علامة المتجر">
-        <div class="header">
-            <h1 class="head">ALHJEEN-TEC</h1>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/log.png" alt="شعار المتجر" class="logo" width="30" height="30">
+                    ALHJEEN-TEC
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dvises.html">الأجهزة</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">تسجيل الدخول</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container contact-container dircectionrlt">
+        <h2 class="text-center">للتواصل معنا</h2>
+        <p class="text-center">إذا كان لديك أي استفسارات أو تحتاج إلى مساعدة، لا تتردد في الاتصال بنا.</p>
+
+        <form id="contactForm">
+            <div class="mb-3">
+                <label for="name" class="form-label">الاسم:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">رقم الهاتف:</label>
+                <input type="text" id="phone" name="phone" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">رسالتك:</label>
+                <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">إرسال</button>
+        </form>
+
+        <div class="mt-4">
+            <h4>معلومات الاتصال</h4>
+            <p><strong>الهاتف:</strong> +123 456 7890</p>
+            <p><strong>البريد الإلكتروني:</strong> support@alhjeen-tec.com</p>
+            <p><strong>العنوان:</strong> 123 شارع التكنولوجيا، المدينة، الدولة</p>
         </div>
-        <tr class="choees">
-            <td><a href="home.html">الصفحة الرئيسية</a></td>
-            <td><a href="dvises/type-dvises/phone/phone.html">الهواتف</a> </td>
-            <td><a href="dvises/type-dvises/lap/lab.html">اللاب</a></td>
-            <td><a href="ask-me.html">استفسار</a></td>
-            <td><a href="calling.html">للتواصل حاص</a></td>
-        </tr>
-        
-    </nav>
-    <div class="contact-container">
-        <header>
-            <h1>Contact Us</h1>
-        </header>
 
-        <section class="contact-info">
-            <h2>Contact Information</h2>
-            <div class="contact-item">
-                <label for="company-name">Company Name:</label>
-                <p id="company-name">Advanced Technology Company</p>
-            </div>
-            <div class="contact-item">
-                <label for="phone-number">Phone:</label>
-                <p id="phone-number">+95020690288</p>
-            </div>
-            <div class="contact-item">
-                <label for="fax-number">Fax:</label>
-                <p id="fax-number">+02548154</p>
-            </div>
-            <div class="contact-item">
-                <label for="email">Email:</label>
-                <p id="email">ِAlhjeen@techcompany.com</p>
-            </div>
-            <div class="contact-item">
-                <label for="address">Address:</label>
-                <p id="address"> Tech Street, Future City, Country</p>
-            </div>
-        </section>
+        <div class="map-container">
+            <h4>موقعنا على الخريطة</h4>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509198!2d144.9537353153164!3d-37.81627997975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11f3b3%3A0x5045675218ceed0!2sYour%20Business%20Name!5e0!3m2!1sen!2sus!4v1616161616161!5m2!1sen!2sus"
+                allowfullscreen="" loading="lazy"></iframe>
+        </div>
 
-        <footer>
-            <p>&copy; 2024 Alhjeen Technology Company</p>
-        </footer>
+        <div class="social-icons text-center">
+            <h4>تابعنا على وسائل التواصل الاجتماعي</h4>
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin-in"></a>
+        </div>
     </div>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 ALHJEEN-TEC. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

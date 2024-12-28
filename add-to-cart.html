@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة إلى السلة | ALHJEEN-TEC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
+        type="image/gif" sizes="16x16">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/log.png" alt="شعار المتجر" class="logo" width="30" height="30">
+                    ALHJEEN-TEC
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dvises.html">الأجهزة</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ask-me.html">استفسار</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calling.html">للتواصل</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">تسجيل الدخول</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <div class="cart-container">
+            <h2 class="text-center">سلة المشتريات</h2>
+
+            <div class="cart-items" id="cartItems">
+                <!-- سيتم إضافة عناصر السلة هنا بواسطة JavaScript -->
+            </div>
+
+            <div class="total-price-container d-flex justify-content-between align-items-center mt-4">
+                <span class="total-price">المجموع: 0 ر.س</span>
+                <button class="btn btn-primary">إتمام الشراء</button>
+            </div>
+
+            <div class="empty-cart" style="display: none;">
+                <p>سلتك فارغة!</p>
+                <a href="dvises.html" class="btn btn-primary">تسوق الآن</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 ALHJEEN-TEC. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cartItems');
+
+            // التحقق مما إذا كانت السلة فارغة
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>سلتك فارغة!</p>';
+            } else {
+                // عرض العناصر في السلة
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item', 'd-flex', 'align-items-center', 'mb-3');
+                    cartItem.innerHTML = `
+                        <img src="${item.image}" alt="${item.name}" class="img-thumbnail" style="width: 100px; height: auto; margin-right: 15px;">
+                        <div>
+                            <h5>${item.name}</h5>
+                            <p>${item.description}</p>
+                            <p><strong>السعر: ${item.price} ر.س</strong></p>
+                            <button class="btn btn-danger remove-item" data-item-name="${item.name}">إزالة</button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+            }
+        });
+
+        // إضافة وظيفة لإزالة العناصر من السلة
+        document.getElementById('cartItems').addEventListener('click', function (event) {
+            if (event.target.classList.contains('remove-item')) {
+                const itemName = event.target.getAttribute('data-item-name'); // الحصول على اسم العنصر
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                // تصفية السلة لإزالة العنصر المحدد فقط
+                cart = cart.filter(item => item.name !== itemName);
+
+                // تحديث السلة في localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                // إعادة تحميل الصفحة لتحديث العرض
+                location.reload();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,63 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title> the one code</title>
-        <meta charset="UTF-8">
-        <link  rel="stylesheet" href="../../../../css/s-nav.css">  
-        <link  rel="stylesheet" href="../../../../css/s-t-lap.css"> 
-    </head>
+<html lang="ar">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | ALHJEEN-TEC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon"
+        href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
+        type="image/gif" sizes="16x16">
+    <!-- EXTERNAL LINKS -->
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="form-container">
+            <h2 class="text-center">تسجيل الدخول</h2>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="verifyEmail" class="form-label">البريد الإلكتروني:</label>
+                    <input type="email" class="form-control" id="verifyEmail" name="verifyEmail" required
+                        placeholder="أدخل بريدك الإلكتروني">
+                    <div class="form-text">يرجى إدخال بريد إلكتروني صحيح.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="verifyPassword" class="form-label">كلمة المرور:</label>
+                    <input type="password" class="form-control" id="verifyPassword" name="verifyPassword" required
+                        placeholder="أدخل كلمة المرور">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">تسجيل الدخول</button>
+                <div class="mt-3 text-center">
+                    <a href="forgot-password.html">نسيت كلمة المرور؟</a>
+                </div>
+                <p id="verifyMessage" class="text-danger"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const verifyEmail = document.getElementById('verifyEmail').value;
+            const verifyPassword = document.getElementById('verifyPassword').value;
+
+            // تحقق من صحة المدخلات
+            if (!verifyEmail || !verifyPassword) {
+                document.getElementById('verifyMessage').textContent = 'يرجى ملء جميع الحقول.';
+                return;
+            }
+
+            const userData = JSON.parse(localStorage.getItem('userData'));
+            if (userData && userData.email === verifyEmail && userData.password === verifyPassword) {
+                window.location.href = 'timeLeft.html';
+            } else {
+                document.getElementById('verifyMessage').textContent = 'البريد الإلكتروني أو كلمة المرور غير صحيحة';
+            }
+        });
+    </script>
+      <script src="js/all.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.js"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script src="js/script.js"></script>
     
-    <body>
-        <nav class="nav-tec">
-        
-           
-            <img src="../../../../img/log.png" alt="علامة المتجر">
-            <div class="header">
-                <h1 class="head">ALHJEEN-TEC</h1>
-            </div>
-            <tr class="choees">
-                <td><a href="../../../home.html">الصفحة الرئيسية</a></td>
-                <td><a href="../phone/phone.html">الهواتف</a> </td>
-                <td><a href="lab.html">اللاب</a></td>
-                <td><a href="../../../ask-me.html">استفسار</a></td>
-                <td><a href="../../../calling.html">للتواصل حاص</a></td>
-            </tr>
-            
-        </nav>
-        <header>
-            <div>
-                <h2 class="text-choees">اختر نوع اللاب الذي تبحث عنه</h2>
-            </div>
-        </header>
-        <main>
-            
-            <section>
-                
-                <div class="type-lap">
-                
-                <div class="lap">
-                    <img class="img" src="../../../../img/hp.jpg">
-                    <a href="../lap/type-lap/hp/hp.html"><p>hp</p></a>
-                </div>
-                <div class="lap">
-                    <img class="img" src="../../../../img/msi.png">
-                    <a href="../lap/type-lap/msi/msi.html"><p>msi</p></a>
-                </div>
-                <div class="lap">
-                    <img class="img" src="../../../../img/victus.jpg">
-                    <a href="../lap/type-lap/victus/victus.html"><p>victus</p></a>
-                </div>
-                <div class="lap">
-                    <img class="img" src="../../../../img/apple.png">
-                    <a href="../lap/type-lap/apple/apple.html"><p>apple</p></a>
-                </div>
-                </div>
-                
-            </section>
-        </main>
-        
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    
+</body>
 
-
-    </body>
 </html>

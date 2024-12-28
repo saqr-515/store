@@ -1,48 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALHJEEN-TEC Sign Up</title>
-    <<link rel="stylesheet" href="../css/s-log.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
+        type="image/gif" sizes="16x16">
 
 </head>
+
 <body>
-   
-    <div class="form-container">
-        <h2> تسجيل الدخول</h2>
-        
-        <form id="loginForm"  >
-            <label for="firstName">الاسم الأول:</label>
-            <input type="text" id="firstName" name="firstName" required>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/log.png" alt="شعار المتجر" class="logo" width="30" height="30">
+                    ALHJEEN-TEC
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="dvises.html">الأجهزة</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ask-me.html">استفسار</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calling.html">للتواصل</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">تسجيل الدخول</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-            <label for="lastName">الاسم الثاني:</label>
-            <input type="text" id="lastName" name="lastName" required>
+    <div class="container mt-5">
+        <div class="form-container">
+            <h2 class="text-center">تسجيل حساب جديد</h2>
 
-            <label for="age">العمر:</label>
-            <input type="number" id="age" name="age" required>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">الاسم الأول:</label>
+                    <input type="text" id="firstName" name="firstName" class="form-control" required>
+                </div>
 
-            <label for="phone">رقم الهاتف:</label>
-            <input type="text" id="phone" name="phone" required>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">الاسم الثاني:</label>
+                    <input type="text" id="lastName" name="lastName" class="form-control" required>
+                </div>
 
-            <label for="email">البريد الإلكتروني:</label>
-            <input type="email" id="email" name="email" required>
+                <div class="mb-3">
+                    <label for="age" class="form-label">العمر:</label>
+                    <input type="number" id="age" name="age" class="form-control" required>
+                </div>
 
-            <label for="password">كلمة المرور:</label>
-            <input type="password" id="password" name="password" required>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">رقم الهاتف:</label>
+                    <input type="text" id="phone" name="phone" class="form-control" required>
+                </div>
 
-            <label for="confirm-password">تأكيد كلمة المرور:</label>
-            <input type="password" id="confirmPassword" name="confirm-password" required>
+                <div class="mb-3">
+                    <label for="email" class="form-label">البريد الإلكتروني:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
 
-            <button type="submit" id="save">حفظ</button>
-            <br>
-            <br>
-            <button type="button" id="clearForm">تنظيف</button>
-        </form>
-        <p id="errorMessage" style="color: red;"></p>
+                <div class="mb-3">
+                    <label for="password" class="form-label">كلمة المرور:</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirm-password" class="form-label">تأكيد كلمة المرور:</label>
+                    <input type="password" id="confirmPassword" name="confirm-password" class="form-control" required>
+                </div>
+
+                <div class="mb-3 form-check">
+                    <label class="form-check-label" for="terms">أوافق على <a href="terms.html">الشروط
+                            والأحكام</a></label>
+                    <input type="checkbox" class="form-check-input" id="terms" required>
+                </div>
+
+                <button type="submit" id="save" class="btn btn-primary w-100">حفظ</button>
+                <br>
+                <br>
+                <button type="button" id="clearForm" class="btn btn-secondary w-100">تنظيف</button>
+            </form>
+            <p class="text-center mt-3">هل لديك حساب؟ <a href="login.html">تسجيل الدخول</a></p>
+            <p id="errorMessage" style="color: red;"></p>
+        </div>
     </div>
-    
-    <script src="../js/log.js"></script>
-    
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 ALHJEEN-TEC. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
+
 </html>
